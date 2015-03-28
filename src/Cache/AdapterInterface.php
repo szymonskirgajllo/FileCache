@@ -40,4 +40,12 @@ interface AdapterInterface
      * @return bool
      */
     public function removeItem($key);
+
+    /**
+     * Removes all items from cache based on given namespace.
+     *
+     * @param string $namespace
+     * @return bool
+     */
+    public function dropItems($namespace);
 }

@@ -5,6 +5,9 @@ namespace spec\Cache\Adapter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
+/**
+ * @author Szymon Skirgajllo <szymon.skirgajllo@gmail.com>
+ */
 class FileSpec extends ObjectBehavior
 {
     private $existingKey = 'some_existing_phpspec:key';
@@ -19,7 +22,7 @@ class FileSpec extends ObjectBehavior
 
     function it_should_be_able_to_add_item_to_cache()
     {
-        $this->setItem($this->existingKey, ['some_content'], 300)->shouldReturn(true);
+        $this->setItem($this->existingKey, ['some_content_specified_for_file'], 300)->shouldReturn(true);
     }
 
     function it_should_be_able_to_get_item_from_cache()
@@ -27,7 +30,7 @@ class FileSpec extends ObjectBehavior
         $result = $this->getItem($this->existingKey);
 
         $result->shouldBeArray();
-        $result->shouldContain('some_content');
+        $result->shouldContain('some_content_specified_for_file');
     }
 
     function it_should_not_be_able_to_get_item_from_cache()
@@ -64,8 +67,8 @@ class FileSpec extends ObjectBehavior
         $this->dropItems($this->existingNamespace)->shouldReturn(true);
         $this->dropItems($this->nonExistingNamespace)->shouldReturn(false);
     }
-//
-    function it_should_not_be_able_to_drop_cache_by_given_empty_namespace()
+
+    function it_should_throw_exception_when_namespace_is_empty()
     {
         $this->shouldThrow('\Exception')->duringDropItems('');
     }
