@@ -2,8 +2,6 @@
 
 namespace Cache;
 
-use Doctrine\Instantiator\Exception\UnexpectedValueException;
-
 /**
  * @package Cache
  * @author Szymon Skirgajllo <szymon.skirgajllo@gmail.com>
@@ -79,8 +77,3 @@ class Cache
         return $this->adapter->getItem($key);
     }
 }
-
-
-//$obj = new Cache();
-//$obj->setNamespace('some_namespace');
-//var_dump($obj->keyToNamespace('someKey'));

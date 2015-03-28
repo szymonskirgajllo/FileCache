@@ -10,12 +10,12 @@ interface AdapterInterface
     /**
      * Adds item to cache.
      *
-     * @param $key
-     * @param $data
-     * @param $ttl
-     * @return boolean
+     * @param string $key
+     * @param array $data
+     * @param int $ttl
+     * @return bool
      */
-    public function setItem($key, $data, $ttl);
+    public function setItem($key = '', array $data = [], $ttl = 0);
 
     /**
      * Gets item from cache by given key and returns it.
@@ -29,15 +29,15 @@ interface AdapterInterface
      * Checks whether given key exists in cache.
      *
      * @param $key
-     * @return boolean
+     * @return bool
      */
-    public function itemExist($key);
+    public function hasItem($key);
 
     /**
      * Removes item from cache by given key.
      *
      * @param $key
-     * @return boolean
+     * @return bool
      */
     public function removeItem($key);
 }
