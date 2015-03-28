@@ -10,7 +10,10 @@
 Just execute bin/phpspec run
 
 
-
+How to use?
+-----------
+1. Select your adapter:
+  * File
 
 
 Namespaces:
