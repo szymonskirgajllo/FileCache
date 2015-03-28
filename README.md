@@ -1,4 +1,6 @@
-# FileCache
+# Cache adapter
+## Features:
+- Add more adapters like memcached, redis, apc etc...
 
 ## Installation
 1) composer install
