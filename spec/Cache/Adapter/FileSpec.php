@@ -56,7 +56,7 @@ class FileSpec extends ObjectBehavior
     {
         $this->removeItem($this->existingKey)->shouldReturn(true);
     }
-//
+
     function it_should_not_remove_non_existing_key()
     {
         $this->removeItem($this->nonExistingKey)->shouldReturn(false);
