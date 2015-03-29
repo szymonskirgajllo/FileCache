@@ -1,7 +1,7 @@
 {
   "name": "Simple php cache adapters",
   "require-dev": {
-    "phpspec/phpspec": "2.1.1"
+    "phpspec/phpspec": "2.1.*"
   },
   "config": {
     "bin-dir": "bin/"
