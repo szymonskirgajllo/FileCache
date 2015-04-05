@@ -15,6 +15,13 @@ class MemcachedSpec extends ObjectBehavior
     private $nonExistingKey = 'some_non_existing_phpspec:key';
     private $nonExistingNamespace = 'some_non_existing_phpspec';
 
+    function let()
+    {
+        $this->beConstructedWith([
+            ['localhost', 11211]
+        ]);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType('Cache\Adapter\Memcached');
@@ -41,7 +48,7 @@ class MemcachedSpec extends ObjectBehavior
         $result->shouldReturn(false);
     }
 
-    function it_should_not_be_able_to_get_item_from_cache_with_empty_key()
+    function it_should_throw_exception_while_receiving_data_from_cache_with_empty_key()
     {
         $this->shouldThrow('\Exception')->duringGetItem('');
     }
@@ -55,6 +62,11 @@ class MemcachedSpec extends ObjectBehavior
         $result = $this->hasItem($this->nonExistingKey);
         $result->shouldBeBoolean();
         $result->shouldReturn(false);
+    }
+
+    function it_should_throw_exception_while_checking_whether_given_empty_key_exist_in_cache()
+    {
+        $this->shouldThrow('\Exception')->duringHasItem('');
     }
 
     function it_should_be_able_to_remove_existing_key_from_cache()

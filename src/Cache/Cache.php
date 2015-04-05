@@ -17,6 +17,7 @@ class Cache
      */
     public function setAdapter(AdapterInterface $adapter)
     {
+        // TODO: Add configuration file for each of adapters
         $this->adapter = $adapter;
     }
 

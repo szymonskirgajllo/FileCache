@@ -2,34 +2,88 @@
 
 namespace Cache\Adapter;
 
+use Cache\AdapterInterface;
+
 /**
  * @author Szymon Skirgajllo <szymon.skirgajllo@gmail.com>
  */
-class Memcached
+class Memcached implements AdapterInterface
 {
+    private $memcached = null;
 
-    public function setItem($argument1, $argument2, $argument3)
+    public function __construct(array $servers = [])
     {
-        // TODO: write logic here
+        // TODO: Throw exception when $servers is empty
+
+        $this->memcached = new \Memcached();
+        $this->memcached->addServers($servers);
     }
 
-    public function getItem($argument1)
+    /**
+     * Adds item to cache.
+     *
+     * @param string $key
+     * @param array $data
+     * @param int $ttl
+     * @return bool
+     */
+    public function setItem($key = '', array $data = [], $ttl = 0)
     {
-        // TODO: write logic here
+        // TODO: Check $this->memcached->getResultMessage() or $this->memcached->getResultCode()
+        return $this->memcached->set($key, serialize($data), $ttl);
     }
 
-    public function hasItem($argument1)
+    /**
+     * Gets item from cache by given key and returns it.
+     *
+     * @param $key
+     * @throws \Exception when the key variable is empty
+     * @return array
+     */
+    public function getItem($key = '')
     {
-        // TODO: write logic here
+        // TODO: Check $this->memcached->getResultMessage() or $this->memcached->getResultCode()
+        if ($key === '') {
+            throw new \Exception('Key should not be empty');
+        }
+
+        return unserialize($this->memcached->get($key));
     }
 
-    public function removeItem($argument1)
+    /**
+     * Checks whether given key exists in cache.
+     *
+     * @param $key
+     * @return bool
+     */
+    public function hasItem($key = '')
     {
-        // TODO: write logic here
+        // TODO: Check $this->memcached->getResultMessage() or $this->memcached->getResultCode()
+        // TODO: Implement hasItem() method.
     }
 
-    public function dropItems($argument1)
+    /**
+     * Removes item from cache by given key.
+     *
+     * @param $key
+     * @return bool
+     */
+    public function removeItem($key = '')
     {
-        // TODO: write logic here
+        // TODO: Check $this->memcached->getResultMessage() or $this->memcached->getResultCode()
+        // TODO: Implement removeItem() method.
     }
+
+    /**
+     * Removes all items from cache based on given namespace.
+     *
+     * @param string $namespace
+     * @return bool
+     */
+    public function dropItems($namespace = '')
+    {
+        // TODO: Check $this->memcached->getResultMessage() or $this->memcached->getResultCode()
+        // TODO: Implement dropItems() method.
+    }
+
 }
