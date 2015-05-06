@@ -11,6 +11,12 @@
 ## Execute phpspec
 Just execute bin/phpspec run
 
+### Additional config
+Dev:
+
+    bin/phpspec run --config phpspec_dev.yml
+This generates code coverage for you and saves output in coverage directory
+
 How to use?
 -----------
 #### Select your adapter

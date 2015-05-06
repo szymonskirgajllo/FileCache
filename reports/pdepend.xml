@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics generated="2015-04-07T20:08:00" pdepend="2.0.6" ahh="0" andc="0" calls="41" ccn="34" ccn2="34" cloc="155" clsa="0" clsc="4" eloc="185" fanout="5" leafs="4" lloc="108" loc="412" maxDIT="0" ncloc="257" noc="4" nof="0" noi="1" nom="27" nop="2" roots="0">
+  <files>
+    <file name="/home/vagrant/filecache/src/Cache/Adapter/File.php" cloc="38" eloc="94" lloc="58" loc="170" ncloc="132"/>
+    <file name="/home/vagrant/filecache/src/Cache/Adapter/Memcached.php" cloc="45" eloc="32" lloc="15" loc="90" ncloc="45"/>
+    <file name="/home/vagrant/filecache/src/Cache/Cache.php" cloc="34" eloc="35" lloc="18" loc="80" ncloc="46"/>
+    <file name="/home/vagrant/filecache/src/Cache/TestClass.php" cloc="3" eloc="14" lloc="6" loc="21" ncloc="18"/>
+  </files>
+  <package name="Cache\Adapter" cr="0.15" noc="2" nof="0" noi="0" nom="14" rcr="0.2775">
+    <class name="File" ca="0" cbo="1" ce="1" cis="5" cloc="35" cr="0.15" csz="9" dit="0" eloc="79" impl="1" lloc="47" loc="160" ncloc="125" noam="0" nocc="0" nom="8" noom="0" npm="5" rcr="0.21375" vars="1" varsi="1" varsnp="0" wmc="18" wmci="18" wmcnp="15">
+      <file name="/home/vagrant/filecache/src/Cache/Adapter/File.php"/>
+      <method name="setItem" ccn="2" ccn2="2" cloc="0" eloc="9" lloc="6" loc="14" ncloc="14" npath="2"/>
+      <method name="getItem" ccn="3" ccn2="3" cloc="0" eloc="11" lloc="7" loc="16" ncloc="16" npath="4"/>
+      <method name="hasItem" ccn="1" ccn2="1" cloc="1" eloc="3" lloc="1" loc="6" ncloc="5" npath="1"/>
+      <method name="removeItem" ccn="2" ccn2="2" cloc="0" eloc="8" lloc="5" loc="12" ncloc="12" npath="2"/>
+      <method name="dropItems" ccn="7" ccn2="7" cloc="2" eloc="28" lloc="18" loc="40" ncloc="38" npath="32"/>
+      <method name="prepareContent" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="1" loc="8" ncloc="8" npath="1"/>
+      <method name="getDirectoryFromNamespace" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="4" loc="9" ncloc="9" npath="1"/>
+      <method name="keyToFilename" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="5" loc="11" ncloc="11" npath="1"/>
+    </class>
+    <class name="Memcached" ca="0" cbo="2" ce="2" cis="6" cloc="42" cr="0.15" csz="7" dit="0" eloc="19" impl="1" lloc="6" loc="80" ncloc="38" noam="0" nocc="0" nom="6" noom="0" npm="6" rcr="0.21375" vars="1" varsi="1" varsnp="0" wmc="7" wmci="7" wmcnp="7">
+      <file name="/home/vagrant/filecache/src/Cache/Adapter/Memcached.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="1" eloc="4" lloc="2" loc="7" ncloc="6" npath="1"/>
+      <method name="setItem" ccn="1" ccn2="1" cloc="1" eloc="3" lloc="1" loc="5" ncloc="4" npath="1"/>
+      <method name="getItem" ccn="2" ccn2="2" cloc="1" eloc="6" lloc="3" loc="9" ncloc="8" npath="2"/>
+      <method name="hasItem" ccn="1" ccn2="1" cloc="2" eloc="2" lloc="0" loc="5" ncloc="3" npath="1"/>
+      <method name="removeItem" ccn="1" ccn2="1" cloc="2" eloc="2" lloc="0" loc="5" ncloc="3" npath="1"/>
+      <method name="dropItems" ccn="1" ccn2="1" cloc="2" eloc="2" lloc="0" loc="5" ncloc="3" npath="1"/>
+    </class>
+  </package>
+  <package name="Cache" cr="0.2775" noc="2" nof="0" noi="1" nom="13" rcr="0.15">
+    <class name="Cache" ca="0" cbo="2" ce="2" cis="6" cloc="30" cr="0.15" csz="8" dit="0" eloc="22" impl="0" lloc="9" loc="71" ncloc="41" noam="0" nocc="0" nom="6" noom="0" npm="6" rcr="0.15" vars="2" varsi="2" varsnp="0" wmc="7" wmci="7" wmcnp="7">
+      <file name="/home/vagrant/filecache/src/Cache/Cache.php"/>
+      <method name="setAdapter" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getAdapter" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="setNamespace" ccn="2" ccn2="2" cloc="0" eloc="7" lloc="4" loc="10" ncloc="10" npath="2"/>
+      <method name="getNamespace" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="addItem" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getItem" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="TestClass" ca="0" cbo="0" ce="0" cis="2" cloc="0" cr="0.15" csz="3" dit="0" eloc="6" impl="0" lloc="2" loc="14" ncloc="14" noam="0" nocc="0" nom="2" noom="0" npm="2" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/home/vagrant/filecache/src/Cache/TestClass.php"/>
+      <method name="setSomething" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getSomething" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+  </package>
+</metrics>
